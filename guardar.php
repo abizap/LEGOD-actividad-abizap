@@ -1,5 +1,5 @@
 <?php
-    include 'config';
+    include 'config.php';
 
     $mensaje = "";
     $clase_mensaje = "";
@@ -12,8 +12,8 @@
         $theme_id = $_POST["theme_id"];
 
         $sql = "INSERT INTO sets (set_num, name, year, num_parts, theme_id)
-                VALUES ("$set_num, $name, $year, $num_parts, $theme_id")";
-        $query = mysqli_query($conexion, $query);
+                VALUES ('$set_num', '$name', $year, $num_parts, $theme_id)";
+        $query = mysqli_query($conexion, $sql);
         if($query){
             $mensaje = "FUE UN EXITO";
             $clase_mensaje = "mensaje-exito";
